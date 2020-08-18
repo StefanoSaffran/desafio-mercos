@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaWhatsapp, FaUserAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import { IoMdCart, IoIosMenu } from 'react-icons/io';
+import { FaWhatsapp } from 'react-icons/fa';
+import { MdPlace, MdPerson, MdMenu, MdShoppingCart } from 'react-icons/md';
 
 import Input from '../Input';
 
@@ -18,18 +18,18 @@ const Header: React.FC = () => {
           </span>
           <User>
             <div>
-              <FaUserAlt size={14} />
+              <MdPerson size={20} />
               Arethusa
             </div>
             <div>
-              <FaMapMarkerAlt size={14} />
+              <MdPlace size={20} />
               Bom Retiro - Joinville, SC
             </div>
           </User>
         </Info>
         <Nav>
           <div>
-            <IoIosMenu size={23} />
+            <MdMenu size={25} />
             <a href="/">Setores</a>
             <a href="/">Ofertas</a>
           </div>
@@ -40,8 +40,8 @@ const Header: React.FC = () => {
           </SearchContainer>
 
           <div>
-            <IoMdCart size={23} />
-            R$ 1.050,25
+            <MdShoppingCart size={25} />
+            R$ 62,50
           </div>
         </Nav>
       </Content>

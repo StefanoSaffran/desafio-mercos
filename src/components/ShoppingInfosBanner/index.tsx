@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaTruck, FaTag } from 'react-icons/fa';
-import { IoMdCard } from 'react-icons/io';
+import { MdLocalShipping, MdLocalOffer, MdPayment } from 'react-icons/md';
 
 import { Container, Content, InfoItem } from './styles';
 
@@ -9,17 +8,17 @@ const ShoppingInfosBar: React.FC = () => {
     <Container>
       <Content>
         <InfoItem>
-          <FaTruck size={18} />
+          <MdLocalShipping size={20} />
           Delivery apenas para Joinville
         </InfoItem>
 
         <InfoItem>
-          <FaTag size={18} />
+          <MdLocalOffer size={20} />
           Desconto de 10% nas compras acima de R$ 200,00
         </InfoItem>
 
         <InfoItem>
-          <IoMdCard size={18} />
+          <MdPayment size={20} />
           Pague em até 12x no cartão
         </InfoItem>
       </Content>

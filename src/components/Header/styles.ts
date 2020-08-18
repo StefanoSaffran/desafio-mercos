@@ -5,6 +5,7 @@ export const Container = styled.header`
   width: 100%;
 
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
 `;
 
 export const Content = styled.div`
@@ -22,7 +23,7 @@ export const Info = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 1.2rem;
 
   color: var(--color-text-primary);
@@ -60,9 +61,11 @@ export const Nav = styled.nav`
   align-items: flex-end;
   justify-content: space-between;
 
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1.4rem;
+  line-height: 25px;
   font-weight: bold;
+  letter-spacing: 0.1px;
 
   > div {
     display: flex;
@@ -96,4 +99,9 @@ export const Nav = styled.nav`
 export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: -80px;
+
+  img {
+    margin-bottom: 4px;
+  }
 `;
