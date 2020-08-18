@@ -5,6 +5,10 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
 
+  & + div {
+    margin-top: 1.6rem;
+  }
+
   input {
     width: 100%;
     flex: 1;
@@ -16,6 +20,22 @@ export const Container = styled.div`
     border-bottom: 1px solid var(--color-text-primary);
     background-color: transparent;
     font-weight: 500;
+  }
+
+  > input ~ label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    color: var(--color-text-primary);
+    transition: 0.4s;
+    pointer-events: none;
+  }
+
+  > input:focus ~ label,
+  > input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
   }
 
   svg {

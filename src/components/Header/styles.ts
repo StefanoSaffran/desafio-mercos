@@ -72,6 +72,7 @@ export const Nav = styled.nav`
     align-items: center;
 
     > a {
+      display: none;
       color: var(--color-text-primary);
       text-transform: uppercase;
     }
@@ -92,6 +93,14 @@ export const Nav = styled.nav`
   > div:last-child {
     > svg {
       color: var(--color-primary);
+    }
+  }
+
+  @media (min-width: 740px) {
+    > div {
+      > a {
+        display: block;
+      }
     }
   }
 `;
