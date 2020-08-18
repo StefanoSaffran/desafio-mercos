@@ -29,6 +29,9 @@ const Dashboard: React.FC = () => {
           <CartItem />
           <CartItem />
           <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
         </CartList>
 
         <Summary>
@@ -37,22 +40,24 @@ const Dashboard: React.FC = () => {
           </header>
 
           <Details>
-            <DetailsItem>
-              <span>Itens</span>
-              <span>5</span>
-            </DetailsItem>
-            <DetailsItem>
-              <span>Total em produtos</span>
-              <span>R$ 62,50</span>
-            </DetailsItem>
-            <DetailsItem>
-              <span>Descontos</span>
-              <span>R$ 0,00</span>
-            </DetailsItem>
+            <div>
+              <DetailsItem>
+                <span>Itens</span>
+                <span>5</span>
+              </DetailsItem>
+              <DetailsItem>
+                <span>Total em produtos</span>
+                <span>R$ 62,50</span>
+              </DetailsItem>
+              <DetailsItem>
+                <span>Descontos</span>
+                <span>R$ 0,00</span>
+              </DetailsItem>
+            </div>
 
             <Total>
               <span>Total</span>
-              <span>R$ 10,00</span>
+              <span>R$ 62,50</span>
             </Total>
 
             <button type="button">Finalizar a compra</button>

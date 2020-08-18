@@ -4,7 +4,6 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  margin-bottom: -5px;
 
   input {
     width: 100%;
@@ -16,7 +15,7 @@ export const Container = styled.div`
     border: none;
     border-bottom: 1px solid var(--color-text-primary);
     background-color: transparent;
-    font-weight: normal;
+    font-weight: 500;
   }
 
   svg {

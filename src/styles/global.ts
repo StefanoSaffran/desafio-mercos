@@ -2,14 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
+    --color-primary: #E53935;
+
+    --color-text-primary: #212121;
+    --color-text-secondary: #424242;
+    --color-text-banner: #616161;
+    --color-text-tertiary: #9E9E9E;
+    --color-placeholder: #BDBDBD;
+
     --color-background: #fff;
     --color-background-banner: #F5F5F5;
-    --color-primary: #E53935;
-    --color-text-primary: #212121;
-    --color-text-secondary: #4C4C4C;
-    --color-text-tertiary: #9E9E9E;
-    --color-text-banner: #616161;
-    --color-placeholder: #BDBDBD;
     --color-border: #E0E0E0;
 
     font-size: 60%;
@@ -38,6 +40,7 @@ export default createGlobalStyle`
 
   body, input, button, textarea, input::placeholder, textarea::placeholder {
     font: 400 1.6rem Roboto, sans-serif;
+    line-height: 20px;
     border: 0;
   }
 
