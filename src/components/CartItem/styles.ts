@@ -88,14 +88,17 @@ export const Quantity = styled.div`
     border: 1px solid var(--color-border);
     border-radius: 5px;
 
-    svg {
-      path {
+    > button {
+      background: none;
+      height: 22px;
+
+      svg path {
         color: var(--color-text-banner);
       }
     }
 
-    span + svg {
-      path {
+    span + button {
+      svg path {
         color: var(--color-primary);
       }
     }

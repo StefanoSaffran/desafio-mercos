@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { MdPlace, MdPerson, MdMenu, MdShoppingCart } from 'react-icons/md';
 
@@ -8,7 +8,11 @@ import logo from '../../assets/logo.png';
 
 import { Container, Content, Info, User, Nav, SearchContainer } from './styles';
 
-const Header: React.FC = () => {
+interface IProps {
+  total: string;
+}
+
+const Header: FC<IProps> = ({ total }) => {
   return (
     <Container>
       <Content>
@@ -36,12 +40,12 @@ const Header: React.FC = () => {
 
           <SearchContainer>
             <img src={logo} alt="Logo empresa" />
-            <Input name="search" placeholder="O que você procura?" />
+            <Input icon name="search" placeholder="O que você procura?" />
           </SearchContainer>
 
           <div>
             <MdShoppingCart size={25} />
-            R$ 62,50
+            {total}
           </div>
         </Nav>
       </Content>
