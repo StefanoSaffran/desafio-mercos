@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import CartItem from '../../components/CartItem';
 import ShoppingInfosBanner from '../../components/ShoppingInfosBanner';
+import ModalObservations from '../../components/ModalObservations';
 
 import { useCart } from '../../context/cart';
 
@@ -37,6 +38,8 @@ export interface IDiscount {
 }
 
 const Dashboard: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [productId, setproductId] = useState(0);
   const history = useHistory();
 
   const {
@@ -62,9 +65,26 @@ const Dashboard: React.FC = () => {
     history,
   ]);
 
+  const toggleModal = useCallback(() => {
+    setModalOpen(!modalOpen);
+  }, [modalOpen]);
+
+  const handleAddObservation = useCallback(
+    id => {
+      setproductId(id);
+      toggleModal();
+    },
+    [toggleModal],
+  );
+
   return (
     <Container>
       <Header total={formatNumber(totalPrice)} />
+      <ModalObservations
+        isOpen={modalOpen}
+        setIsOpen={toggleModal}
+        productId={productId}
+      />
 
       <ShoppingInfosBanner />
 
@@ -76,7 +96,11 @@ const Dashboard: React.FC = () => {
             <h1>Carrinho vazio</h1>
           ) : (
             products.map(product => (
-              <CartItem key={product.id} product={product} />
+              <CartItem
+                key={product.id}
+                product={product}
+                handleAddObservation={handleAddObservation}
+              />
             ))
           )}
         </CartList>

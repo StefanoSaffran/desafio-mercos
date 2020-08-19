@@ -17,21 +17,30 @@ export const Container = styled.div`
 
 export const CartWrapper = styled.div`
   height: 100%;
-  width: min(100%, 1080px);
+  width: min(100%, 1100px);
 
+  padding: 0 20px;
   margin: 0 auto;
 
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 995px) {
+    flex-direction: row;
+  }
 `;
 
 export const CartList = styled.ul`
   flex: 1;
-  margin-right: 70px;
   margin-bottom: 40px;
+
+  @media (min-width: 995px) {
+    margin-right: 70px;
+  }
 `;
 
 export const Summary = styled.div`
-  width: 320px;
+  width: 100%;
   height: fit-content;
 
   border: 1px solid var(--color-border);
@@ -48,6 +57,10 @@ export const Summary = styled.div`
       letter-spacing: 0.1px;
       text-transform: uppercase;
     }
+  }
+
+  @media (min-width: 995px) {
+    width: 320px;
   }
 `;
 

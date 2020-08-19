@@ -43,13 +43,6 @@ const Checkout: FC = () => {
           observacao,
         }));
 
-        /*     const config = {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      }; */
-
         const data = {
           itens,
           endereco: {
@@ -67,27 +60,14 @@ const Checkout: FC = () => {
 
         toast.success(
           'Compra finalizada! Obrigado pela preferência, volte sempre!',
-          {
-            position: 'top-right',
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          },
         );
+
+        history.push('/');
       } catch (error) {
-        toast.error('Ocorreu um erro no servidor, tente novamente!', {
-          position: 'top-right',
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error('Ocorreu um erro no servidor, tente novamente!');
       }
     },
-    [addressNumber, cardNumber, cvc, neighborhood, products, street],
+    [addressNumber, cardNumber, cvc, neighborhood, products, street, history],
   );
 
   return (

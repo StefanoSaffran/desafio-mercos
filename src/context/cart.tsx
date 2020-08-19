@@ -17,6 +17,7 @@ interface ICartContext {
   productsPrice: number;
   addToCart(products: IProduct[]): void;
   addDiscounts(discounts: IDiscount[]): void;
+  addObservation(id: number, observation: string): void;
   increment(id: number): void;
   decrement(id: number): void;
   removeProduct(id: number): void;
@@ -55,6 +56,21 @@ const CartProvider: React.FC = ({ children }) => {
     (discountTypes: IDiscount[]) => setDiscounts(discountTypes),
     [],
   );
+
+  const addObservation = useCallback((id: number, observation: string) => {
+    setProducts(oldProducts =>
+      oldProducts.map(product => {
+        if (product.id !== id) return product;
+
+        const updatedProduct = {
+          ...product,
+          observacao: observation,
+        };
+
+        return updatedProduct;
+      }),
+    );
+  }, []);
 
   const increment = useCallback(
     async (id: number) => {
@@ -170,6 +186,7 @@ const CartProvider: React.FC = ({ children }) => {
       productsPrice,
       addToCart,
       addDiscounts,
+      addObservation,
       increment,
       decrement,
       removeProduct,
@@ -182,6 +199,7 @@ const CartProvider: React.FC = ({ children }) => {
       productsPrice,
       addToCart,
       addDiscounts,
+      addObservation,
       increment,
       decrement,
       removeProduct,
