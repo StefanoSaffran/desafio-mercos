@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useCallback } from 'react';
 import { MdChatBubbleOutline, MdDelete, MdAdd, MdRemove } from 'react-icons/md';
 
 import { IProduct } from '../../pages/Dashboard';
@@ -9,15 +9,23 @@ import { Container, ItemImage, Product, Quantity } from './styles';
 
 interface IProps {
   product: IProduct;
+  handleAddObservation: (id: number) => void;
 }
 
-const CartItem: FC<IProps> = ({ product }) => {
+const CartItem: FC<IProps> = ({ product, handleAddObservation }) => {
   const { id, nome, quantidade, url_imagem, sku, valor_unitario } = product;
   const { increment, decrement, removeProduct } = useCart();
 
   const total = useMemo(() => {
     return formatNumber(quantidade * valor_unitario);
   }, [quantidade, valor_unitario]);
+
+  const setProductId = useCallback(
+    (productId: number) => {
+      handleAddObservation(productId);
+    },
+    [handleAddObservation],
+  );
 
   return (
     <Container>
@@ -28,7 +36,7 @@ const CartItem: FC<IProps> = ({ product }) => {
 
         <span>SKU {sku}</span>
 
-        <button type="button">
+        <button type="button" onClick={() => setProductId(id)}>
           <MdChatBubbleOutline size={20} />
           Adicionar observação
         </button>
@@ -37,13 +45,13 @@ const CartItem: FC<IProps> = ({ product }) => {
       <Quantity>
         <div>
           <button type="button" onClick={() => decrement(id)}>
-            <MdRemove size={22} />
+            <MdRemove size={20} />
           </button>
 
           <span>{quantidade.toFixed(0)}</span>
 
           <button type="button" onClick={() => increment(id)}>
-            <MdAdd size={22} />
+            <MdAdd size={20} />
           </button>
         </div>
       </Quantity>
