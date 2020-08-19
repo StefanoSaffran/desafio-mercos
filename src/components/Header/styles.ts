@@ -108,9 +108,13 @@ export const Nav = styled.nav`
 export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: -80px;
+  margin-left: 0px;
 
   img {
     margin-bottom: 4px;
+  }
+
+  @media (min-width: 740px) {
+    margin-left: -80px;
   }
 `;
