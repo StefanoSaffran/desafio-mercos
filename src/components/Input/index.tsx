@@ -1,6 +1,5 @@
 import React, { InputHTMLAttributes, FC } from 'react';
 import { IoMdSearch } from 'react-icons/io';
-import NumberFormat from 'react-number-format';
 
 import { Container } from './styles';
 

@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useState, useEffect } from 'react';
 import ReactModal from 'react-modal';
 
 interface IModalProps {
